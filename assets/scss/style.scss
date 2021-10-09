@@ -1,0 +1,98 @@
+
+
+body {
+  background-color: #F9F9F9;
+  margin: 0;
+  position: relative;
+  color: black;
+}
+*:focus {
+  outline: none;
+}
+
+
+img {
+  max-width: 100%;
+  //width: 100%;
+  height: auto;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.star {
+  color: #999999;
+  &.orange * {
+    color: #FFA84C !important;
+  }
+  &.white * {
+    color: white !important;
+  }
+}
+
+* {
+  font-family: "Montserrat", sans-serif;
+
+}
+
+p,span,label {
+  color: #2C2C2C;
+}
+
+.container {
+  width: 100%;
+  padding: 30px 40px;
+  margin-right: auto;
+  margin-left: auto;
+  &.top {
+    > div, > section {
+      margin-bottom: 35px;
+    }
+  }
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-display:swap;
+  src: url("../fonts/Montserrat-Light.ttf");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display:swap;
+  src: url("../fonts/Montserrat-Regular.ttf");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-display:swap;
+  src: url("../fonts/Montserrat-SemiBold.ttf");
+}
+
+
+
+@media (max-width: 1023px) {
+  .container {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@media (max-width: 360px) {
+  .container {
+    padding-right: 5px;
+    padding-left: 5px;
+  }
+}
+

@@ -1,0 +1,38 @@
+.pagination {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__left, &__right {
+    margin-right: 18px;
+    background: #EDEDED;
+    padding: 8px 15px;
+    border-radius: 100%;
+  }
+  &__left {
+    margin-right: 18px;
+  }
+  &__right {
+    margin-left: 18px;
+    transform: rotate(180deg);
+  }
+  &__middle {
+    padding: 0 15px;
+    background: #EDEDED;
+    border-radius: 20px;
+    span {
+      color: #2C2C2C;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 8px 15px;
+      width: min-content;
+      display: inline-block;
+      &.nuxt-link-exact-active  {
+        color: white;
+        border-radius: 100%;
+        background: #6F64F8;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,51 @@
+.header {
+  background-color: white;
+  padding: 14px 27px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.135216);
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  &__left, &__right {
+    display: flex;
+    column-gap: 23px;
+    align-items: center;
+    justify-items: center;
+  }
+  &__right {
+    &User {
+      &Info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-align: right;
+        &Name {
+          font-size: 14px;
+          line-height: 17px;
+        }
+        &Available {
+          font-weight: 300;
+          font-size: 11px;
+          line-height: 13px;
+        }
+      }
+      display: flex;
+      > img {
+        box-shadow: -1px 1px 6px rgba(0, 0, 0, 0.235413);
+        max-width: 35px;
+        border-radius: 100%;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .header {
+    flex-direction: column-reverse;
+    row-gap: 20px;
+    &__left, &__right {
+      justify-content: center;
+    }
+  }
+}

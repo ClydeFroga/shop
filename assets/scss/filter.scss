@@ -1,0 +1,203 @@
+.filter {
+  margin-top: 21px;
+  position: relative;
+  > span {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 20px;
+    display: block;
+    svg {
+      display: none;
+    }
+  }
+  &__main {
+    background-color: white;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
+    border-radius: 8px;
+    padding: 28px 20px;
+    hr {
+      size: 1px;
+      color: #D6D6D6;
+      margin: 25px 0;
+    }
+    &Box {
+      &Title {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 21px;
+        display: block;
+      }
+      label {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 32px;
+        position: relative;
+        width: 100%;
+        > span {
+          text-align: right;
+          font-size: 14px;
+          line-height: 32px;
+          color: #2C2C2C;
+        }
+      }
+      > div {
+        position: relative;
+        &:not(:last-child) {
+          margin-bottom: 5px;
+        }
+
+      }
+      input[type=radio] {
+        opacity: 0;
+        + label:before {
+          display: inline-block;
+          content: '';
+          width: 15px;
+          height: 15px;
+          margin-top: 2px;
+          border: 1px solid #979797;
+          border-radius: 100%;
+          position: absolute;
+          left: -25px;
+          top: 0;
+        }
+        &:checked + label:before {
+          border: none;
+            background-color: #6F64F8;
+        }
+      }
+      input[type=checkbox] {
+        display: none;
+        +label {
+          margin-left: 25px;
+          display: flex;
+          align-items: flex-start;
+          justify-content: space-between;
+          width: auto;
+        }
+        + label:before {
+          display: inline-block;
+          content: '';
+          width: 15px;
+          height: 15px;
+          margin-top: 2px;
+          border: 1px solid #979797;
+          border-radius: 3px;
+          position: absolute;
+          left: -25px;
+          top: 7px;
+        }
+        &:checked + label:before {
+          border: none;
+          background-color: #6F64F8;
+          background-image: url('../svg/checked.svg');
+          background-repeat: no-repeat;
+          background-position: center center;
+        }
+      }
+      input[name=rating] {
+        display: none;
+        & + label:before {
+          content: none !important;
+        }
+      }
+      &Slider {
+        position: relative;
+        &Top {
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+        }
+        &Result {
+          font-size: 20px;
+          line-height: 24px;
+        }
+        #slider {
+          margin-top: 25px;
+          height: 6px;
+          box-shadow: none;
+          border: none;
+          background: #EDEDED !important;
+          .noUi-handle {
+            //all: unset;
+            width: 20px;
+            height: 20px;
+            background-color: #6F64F8;
+            border-radius: 100%;
+            box-shadow: none;
+            border: none;
+            top: -7px;
+            &:before, &:after {
+              content: none;
+            }
+          }
+        }
+        .noUi-base {
+          .noUi-connect {
+            background: #6F64F8;
+          }
+        }
+
+      }
+      &Rating {
+        > div {
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+          &:not(:last-child) {
+            margin-bottom: 15px;
+          }
+          span {
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 14px;
+          }
+        }
+      }
+    }
+  }
+  &__button {
+    background: #6F64F8;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 21px;
+    color: white;
+    padding: 17px 0;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 576px) {
+  .filter {
+    margin-bottom: 22px;
+    > span {
+      cursor: pointer;
+      margin: 0;
+      svg {
+        margin-left: 10px;
+        display: inline-block;
+      }
+    }
+    &__main, &__button {
+
+      display: none;
+    }
+    &__main {
+      margin-top: 22px;
+    }
+
+    &.open {
+      > span svg {
+        transform: rotate(180deg);
+      }
+      .filter__main, .filter__button {
+        display: block;
+      }
+    }
+  }
+}

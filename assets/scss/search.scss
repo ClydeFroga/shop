@@ -1,0 +1,115 @@
+.search {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    &Left {
+      font-size: 18px;
+      line-height: 21px;
+    }
+    &Right {
+      display: flex;
+      align-items: flex-start;
+
+      &Block {
+        &:not(:last-child) {
+          margin-right: 14px;
+        }
+        min-height: 40px;
+        background: #FFFFFF;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
+        border-radius: 8px;
+        cursor: pointer;
+
+        &Svg {
+          padding: 10px 12px;
+          svg {
+            margin-bottom: -3px;
+          }
+        }
+        &.dropdown {
+          padding: 0 !important;
+        }
+      }
+      .dropdown {
+        min-width: 140px;
+        position: relative;
+
+        &:hover {
+          svg {
+            transform: rotate(180deg);
+          }
+          .dropdown__list {
+            display: block;
+          }
+        }
+        &__current {
+          font-size: 14px;
+          line-height: 17px;
+          padding: 10px 15px;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          svg {
+            position: relative;
+            top: 1px;
+          }
+
+        }
+
+        &__list {
+          display: none;
+          border-radius: 0 0 8px 8px;
+          list-style-type: none;
+          padding: 10px 15px;
+          margin: -3px 0 0 0;
+          position: absolute;
+          background-color: white;
+          z-index: 2;
+          width: 100%;
+          box-shadow: 0 12px 8px rgba(0, 0, 0, 0.135216);
+
+          li {
+            font-size: 14px;
+            line-height: 17px;
+            padding: 5px 0;
+          }
+        }
+      }
+    }
+  }
+  &__bottom {
+    margin-top: 22px;
+    position: relative;
+    input {
+      width: 100%;
+      border: none;
+      padding: 17px 30px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.135216);
+      border-radius: 8px;
+      font-weight: 300;
+      font-size: 22px;
+      line-height: 26px;
+      color: #999999;
+    }
+    button {
+      border: none;
+      background-color: transparent;
+      position: absolute;
+      right: 25px;
+      top: 33%;
+      cursor: pointer;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .search {
+    &__top {
+      &Left {
+        display: none;
+      }
+    }
+  }
+}
